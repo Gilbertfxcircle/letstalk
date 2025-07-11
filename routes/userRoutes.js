@@ -1,8 +1,8 @@
-import express from "express";
-import { registerUser, loginUser } from "../controllers/userController.js";
-
+const express = require('express');
+const { sendOTP, verifyOTP } = require('../controllers/otpController');
 const router = express.Router();
-router.post("/register", registerUser);
-router.post("/login", loginUser);
 
-export default router;
+router.post('/send-otp', sendOTP);
+router.post('/verify-otp', verifyOTP);
+
+module.exports = router;
